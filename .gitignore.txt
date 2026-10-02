@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Client Build Artifacts
+client/dist/
+
+# Server Architecture
+server/fables.db
+server/updates/
+
+# OS Generated
+.DS_Store
+Thumbs.db
