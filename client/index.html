@@ -40,41 +40,84 @@
 
         #sidebar { width: 22vw; max-width: 320px; background: rgba(15, 20, 25, 0.85); backdrop-filter: blur(12px); padding: 20px; box-shadow: 5px 0 15px rgba(0,0,0,0.8); display: flex; flex-direction: column; gap: 10px; border-right: 1px solid rgba(255,255,255,0.1); z-index: 100;}
         
-        .sidebar-header { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-        .sidebar-title { margin: 0; font-size: 45px; color: #ffc4d0; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);}
+		#sidebar { width: 28vw; max-width: 400px; background: rgba(15, 20, 25, 0.85); backdrop-filter: blur(12px); padding: 2vh 2vw; box-shadow: 5px 0 15px rgba(0,0,0,0.8); display: flex; flex-direction: column; gap: 1.5vh; border-right: 1px solid rgba(255,255,255,0.1); z-index: 100;}
+		.sidebar-title { margin: 0; font-size: 50px; color: #ffc4d0; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);}
         .icon-btn { font-size: 32px; cursor: pointer; filter: drop-shadow(2px 2px 2px #000); transition: transform 0.2s, color 0.2s; color: #ecf0f1; margin-left: 10px;}
         .icon-btn:hover { color: #ffc4d0; transform: scale(1.1); }
         
-        .score-panel { font-size: 26px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); display: flex; justify-content: space-between;}
+        .score-panel { font-size: 30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); display: flex; justify-content: space-between;}
         hr { border-color: rgba(255,255,255,0.2); width: 100%; margin: 5px 0; }
         
         #inspector { display: flex; flex-direction: column; gap: 5px; align-items: center;}
-        #inspect-img { width: calc(25vh * 0.714); height: 25vh; background: url('images/deck.png') center/cover; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); transition: background 0.2s;}
-        #inspect-title { font-size: 26px; margin: 0; text-align: center; color: #ffc4d0; text-shadow: 1px 1px 2px #000;}
-        #inspect-stats { font-size: 20px; text-align: center; margin: 0; }
-        #inspect-ability { font-size: 18px; text-align: center; color: #bdc3c7; margin: 0; padding: 0 10px;}
+		#inspect-img { width: calc(28vh * 0.714); height: 28vh; background: url('images/deck.png') center/cover; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); transition: background 0.2s;}
+		#inspect-title { font-size: 40px; margin: 0; text-align: center; color: #ffc4d0; text-shadow: 1px 1px 2px #000;}
+		#inspect-stats { font-size: 32px; text-align: center; margin: 0; }
+		#inspect-ability { font-size: 32px; text-align: center; color: #bdc3c7; margin: 0; padding: 0 10px;}
 
-        #log-container { flex: 1; background: rgba(0,0,0,0.5); border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); padding: 10px; overflow-y: auto; overflow-x: hidden; display: flex; flex-direction: column; gap: 8px; font-family: sans-serif; font-size: 14px; box-shadow: inset 0 0 10px #000;}
+        #log-container { flex: 1; background: rgba(0,0,0,0.5); border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); padding: 1.5vh; overflow-y: auto; overflow-x: hidden; display: flex; flex-direction: column; gap: 8px; font-family: sans-serif; font-size: 16px; box-shadow: inset 0 0 10px #000;}
         .log-msg { color: #ecf0f1; line-height: 1.4; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px; animation: slideInLog 0.3s ease-out forwards; }
         .log-msg.highlight { color: #ffc4d0; font-weight: bold; }
         .log-msg.italic { font-style: italic; color: #bdc3c7; }
         .log-time { color: #7f8c8d; font-size: 12px; margin-right: 6px; }
 
-        #board-container { flex: 1; display: none; flex-direction: column; padding: 2vh 4vw; gap: 2vh; align-items: center; justify-content: center; position: relative; }
-        
-        .field { display: flex; gap: 3vh; width: 100%; justify-content: center; z-index: 10; margin-top: 2vh;}
+        #board-container { 
+            flex: 1; display: none; flex-direction: column; padding: 2vh 4vw; 
+            gap: 6vh; align-items: center; justify-content: center; position: relative; 
+        }
+
+        .field { 
+            display: flex; gap: 4vh; width: 100%; justify-content: center; 
+            z-index: 10; margin-top: 0; 
+        }
         #opp-field { flex-direction: row-reverse; } 
 
-        .slot { height: 23vh; width: calc(23vh * 0.714); background: url('images/empty_slot.png') center/cover; border-radius: 8px; display: flex; align-items: center; justify-content: center; transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: inset 0 0 20px rgba(0,0,0,0.5); position: relative; }
+		.slot { 
+			height: 30vh; width: calc(30vh * 0.714); background: url('images/empty_slot.png') center/cover; 
+			border-radius: 8px; display: flex; align-items: center; justify-content: center; 
+			transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+			box-shadow: inset 0 0 20px rgba(0,0,0,0.5); position: relative; 
+		}
         .slot.drag-over { transform: scale(1.05); box-shadow: 0 0 15px #2ecc71; border: 2px solid #2ecc71; background-blend-mode: multiply; background-color: rgba(0,0,0,0.5); }
         .slot.valid-target { border: 2px dashed #2ecc71; animation: pulseValid 1.5s infinite alternate; }
         .slot.valid-attack { border: 2px dashed #e74c3c; animation: pulseAttack 1.5s infinite alternate; }
         .slot.last-action { border: 2px solid #fff; box-shadow: 0 0 20px rgba(255,255,255,0.6); }
 
-        .hand { display: flex; gap: 2vh; height: 28vh; align-items: flex-end; justify-content: center; width: 100%; margin-top: 3vh;}
+        .hand { 
+            display: flex; gap: 2vh; align-items: flex-end; justify-content: center; width: 100%; 
+        }
         .hand.trade-active { z-index: 2200; position: relative; } 
         .hand.discard-active .card-wrapper { animation: aliveWobble 3s ease-in-out infinite alternate, glowPulseOrange 1.5s infinite alternate; cursor: pointer; }
         .inactive-hand { filter: grayscale(60%) brightness(0.6); pointer-events: none; transition: filter 0.4s ease-out; }
+
+		/* Fixed Player Hand Overlay */
+		#player-hand { 
+			position: absolute; 
+			bottom: -27vh; 
+			left: 50%; 
+			transform: translateX(-50%); 
+			height: 35vh; /* Taller container to absorb the bottom space */
+			width: 70vw; 
+			background: rgba(0,0,0,0.001); /* Invisible, but makes the empty gaps between cards "solid" to your mouse */
+			transition: bottom 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+			z-index: 1500; 
+			display: flex;
+			align-items: flex-start; /* Forces the cards to sit at the top of this new taller container */
+		}
+
+		/* Slide up and sit completely flush against the monitor edge (no bottom gap) */
+		#player-hand:hover, #player-hand.discard-active { 
+			bottom: 0; 
+		}
+
+		/* Force hide and disable interactions during a drag */
+		#player-hand.dragging-active { 
+			bottom: -40vh !important; 
+			pointer-events: none !important; 
+		}
+
+		#player-hand .card-wrapper { 
+			height: 32vh; width: calc(32vh * 0.714); 
+		}
 
         .card-wrapper { position: relative; height: 26vh; width: calc(26vh * 0.714); transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 1; animation: aliveWobble 3s ease-in-out infinite alternate; }
         .card-wrapper:hover { transform: translateY(-4vh) scale(1.15) !important; z-index: 999; animation-play-state: paused; }
@@ -94,9 +137,9 @@
         .floating-score { position: absolute; color: #00FF00; font-family: 'Wizzta', sans-serif; font-size: 8vh; text-shadow: 3px 3px 0 #000; pointer-events: none; animation: floatUp 1.5s ease-out forwards; z-index: 500; }
         .particle { position: absolute; pointer-events: none; border-radius: 50%; z-index: 1000; animation: particleAnim 1s ease-out forwards; }
 
-        #deck-area { position: absolute; right: 4vw; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 1vh; }
-        .deck-btn { height: 22vh; width: calc(22vh * 0.714); background: url('images/deck.png') center/cover; border-radius: 8px; cursor: pointer; transition: transform 0.2s, filter 0.2s; box-shadow: 0 10px 20px rgba(0,0,0,0.5);}
-        .deck-btn:hover { transform: translateY(-1vh); filter: brightness(1.2);}
+		#deck-area { position: absolute; right: 3vw; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 1.5vh; z-index: 1000; }
+		.deck-btn { height: 26vh; width: calc(26vh * 0.714); background: url('images/deck.png') center/cover; border-radius: 8px; cursor: pointer; transition: all 0.2s; box-shadow: 0 10px 20px rgba(0,0,0,0.5);}
+		.deck-btn:hover { transform: translateY(-1vh) scale(1.05); filter: brightness(1.2);}
         
         .discard-btn { height: 22vh; width: calc(22vh * 0.714); background: url('images/deck.png') center/cover; border-radius: 8px; filter: grayscale(100%) brightness(0.6); box-shadow: 0 5px 10px rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: filter 0.2s, transform 0.2s;}
         .discard-btn:hover { filter: grayscale(50%) brightness(0.8); transform: translateY(-0.5vh); }
@@ -445,7 +488,6 @@
         overlay.style.display = 'flex';
     }
 
-    // REPLACE THIS ARRAY WITH YOUR FULL 40-CARD LIST BEFORE COMPILING
     const CARD_POOL = [
         { id: 1, number: 1, name: "Chasing Rabbits", symbol: "A", ability: "return card across to opponent's hand", image: "images/card_1a.png" },
         { id: 2, number: 1, name: "Not A Home", symbol: "C", ability: "swap with card across if available", image: "images/card_1b.png" },
@@ -568,7 +610,6 @@
         showGameOver(false);
     }
 
-    // --- Offline Init ---
     function startOffline(scoreTarget) {
         isOffline = true; winScore = scoreTarget; myName = "Player";
         lastPlayed = { isPlayer: null, index: -1, cardRef: null }; updateInspector(null);
@@ -592,7 +633,6 @@
         render();
     }
 
-    // --- Authentication & Networking ---
     function attemptLogin() {
         if (!socket || !socket.connected) {
             document.getElementById('auth-msg').innerText = "Cannot connect to server.";
@@ -814,7 +854,6 @@
         syncState(); render();
     }
 
-    // --- Core Logic ---
     function checkSafeguards() {
         checkBoardFull(true); checkBoardFull(false);
         if (getEmptySlotsCount(state.player.field) > state.player.hand.length) drawCards(state.player);
@@ -1104,7 +1143,6 @@
         }
     }
 
-    // --- AI Logic ---
     function aiTurn() {
         if (state.opponent.score >= winScore || state.player.score >= winScore) return;
 
@@ -1149,7 +1187,6 @@
         } else { isMyTurn = true; showTurnBanner("YOUR TURN", "#ffc4d0"); render(); }
     }
 
-    // --- UI Rendering ---
     function updateInspector(card) {
         if(!card) {
             if (lastPlayed.cardRef) card = lastPlayed.cardRef;
@@ -1182,24 +1219,32 @@
             el.draggable = true;
             if (card._justDrawn) { wrapper.classList.add('just-drawn'); card._justDrawn = false; setTimeout(() => wrapper.classList.remove('just-drawn'), 500); }
             
-            el.addEventListener('dragstart', (e) => {
-                if (!isMyTurn || tradingState.active || discardState.active) { e.preventDefault(); return; }
-                el.classList.add('dragging'); currentDragImg = card.image; e.dataTransfer.setData('text/plain', index);
-                
-                const slots = document.querySelectorAll('#player-field .slot');
-                state.player.field.forEach((c, idx) => { if (!c && canPlaceCard(card, idx, state.player.field, state.opponent.field)) slots[idx].classList.add('valid-target'); });
-                
-                const oppSlots = document.querySelectorAll('#opp-field .slot');
-                state.opponent.field.forEach((c, idx) => {
-                    const mappedIdx = 3 - idx;
-                    if (c && (card.ability.toLowerCase().includes("replace") || card.ability.toLowerCase().includes("return") || card.ability.toLowerCase().includes("swap"))) {
-                        oppSlots[mappedIdx].classList.add('valid-attack');
-                    }
-                });
-            });
+			el.addEventListener('dragstart', (e) => {
+				if (!isMyTurn || tradingState.active || discardState.active) { e.preventDefault(); return; }
+				el.classList.add('dragging'); currentDragImg = card.image; e.dataTransfer.setData('text/plain', index);
+				
+				// 10ms delay prevents the browser from instantly cancelling the drag event
+				setTimeout(() => {
+					document.getElementById('player-hand').classList.add('dragging-active');
+				}, 10);
+				
+				const slots = document.querySelectorAll('#player-field .slot');
+				state.player.field.forEach((c, idx) => { if (!c && canPlaceCard(card, idx, state.player.field, state.opponent.field)) slots[idx].classList.add('valid-target'); });
+				
+				const oppSlots = document.querySelectorAll('#opp-field .slot');
+				state.opponent.field.forEach((c, idx) => {
+					const mappedIdx = 3 - idx;
+					if (c && (card.ability.toLowerCase().includes("replace") || card.ability.toLowerCase().includes("return") || card.ability.toLowerCase().includes("swap"))) {
+						oppSlots[mappedIdx].classList.add('valid-attack');
+					}
+				});
+			});
             
             el.addEventListener('dragend', () => {
                 el.classList.remove('dragging'); currentDragImg = null;
+                
+                document.getElementById('player-hand').classList.remove('dragging-active');
+                
                 document.querySelectorAll('.slot').forEach(s => {
                     s.classList.remove('valid-target'); s.classList.remove('valid-attack');
                     if (s.classList.contains('drag-over')) { s.classList.remove('drag-over'); s.style.backgroundImage = "url('images/empty_slot.png')"; }
