@@ -1,0 +1,30 @@
+{
+  "name": "fables-four",
+  "version": "1.0.4",
+  "description": "Fables Four Digital Client",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.fablesfour.client",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://34.56.96.227:3000/updates"
+      }
+    ]
+  },
+  "devDependencies": {
+    "electron": "^44.4.1",
+    "electron-builder": "^26.15.3"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}
