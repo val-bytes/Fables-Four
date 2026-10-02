@@ -13,6 +13,10 @@ app.whenReady().then(() => {
             contextIsolation: false
         }
     });
+    
+    // Forces the application to open maximized, preserving your CSS viewport scaling
+    win.maximize(); 
+    
     win.loadFile('index.html');
 
     // Check the GCP server for latest.yml on boot

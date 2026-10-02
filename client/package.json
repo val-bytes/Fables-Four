@@ -1,6 +1,6 @@
 {
   "name": "fables-four",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Fables Four Digital Client",
   "main": "main.js",
   "scripts": {

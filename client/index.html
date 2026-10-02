@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fables Four - Cloud Edition</title>
+    <title>Fables Four</title>
     <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
     <style>
         @font-face { font-family: 'Wizzta'; src: url('fonts/Wizzta.ttf') format('truetype'); }
@@ -65,11 +65,12 @@
             gap: 6vh; align-items: center; justify-content: center; position: relative; 
         }
 
-        .field { 
-            display: flex; gap: 4vh; width: 100%; justify-content: center; 
-            z-index: 10; margin-top: 0; 
-        }
-        #opp-field { flex-direction: row-reverse; } 
+		.field { 
+			display: flex; gap: 4vh; width: 100%; justify-content: center; 
+			z-index: 10; margin-top: 0; 
+			padding-right: 14vw; /* Forces the flex center leftwards, dedicating space for the deck */
+		}
+		#opp-field { flex-direction: row-reverse; }
 
 		.slot { 
 			height: 30vh; width: calc(30vh * 0.714); background: url('images/empty_slot.png') center/cover; 
@@ -93,15 +94,15 @@
 		#player-hand { 
 			position: absolute; 
 			bottom: -27vh; 
-			left: 50%; 
+			left: 44%; /* Shifted from 50% to precisely align with the newly offset fields */
 			transform: translateX(-50%); 
-			height: 35vh; /* Taller container to absorb the bottom space */
+			height: 35vh; 
 			width: 70vw; 
-			background: rgba(0,0,0,0.001); /* Invisible, but makes the empty gaps between cards "solid" to your mouse */
+			background: rgba(0,0,0,0.001); 
 			transition: bottom 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 			z-index: 1500; 
 			display: flex;
-			align-items: flex-start; /* Forces the cards to sit at the top of this new taller container */
+			align-items: flex-start; 
 		}
 
 		/* Slide up and sit completely flush against the monitor edge (no bottom gap) */
