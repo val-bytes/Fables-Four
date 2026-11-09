@@ -1,6 +1,6 @@
 {
   "name": "fables-four",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Fables Four Digital Client",
   "main": "main.js",
   "scripts": {
@@ -13,6 +13,9 @@
     "win": {
       "target": "nsis",
       "icon": "icon.ico"
+    },
+    "mac":{
+      "icon": "icon.png"
     },
     "publish": [
       {
